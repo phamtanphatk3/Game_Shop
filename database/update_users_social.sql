@@ -1,0 +1,4 @@
+ALTER TABLE users
+ADD COLUMN google_id VARCHAR(255) NULL AFTER role,
+ADD COLUMN facebook_id VARCHAR(255) NULL AFTER google_id,
+ADD COLUMN name VARCHAR(255) NULL AFTER facebook_id; 

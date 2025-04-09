@@ -1,0 +1,379 @@
+/* Common Styles */
+:root {
+    --primary-gradient: linear-gradient(45deg, #6a11cb, #2575fc);
+    --secondary-color: #f6d365;
+    --dark-bg: rgba(28, 0, 91, 0.4);
+    --border-color: rgba(147, 112, 219, 0.2);
+    --shadow-color: rgba(76, 0, 159, 0.3);
+}
+
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(76, 0, 159, 0.7), rgba(28, 0, 91, 0.4));
+    z-index: -1;
+}
+
+/* Card Styles */
+.card {
+    background: var(--dark-bg) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 20px var(--shadow-color);
+    color: #fff;
+}
+
+.card h2, .card h3, .card h4, .card h5 {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(246, 211, 101, 0.5);
+}
+
+/* Form Styles */
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: #fff;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--secondary-color);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(246, 211, 101, 0.3);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-label {
+    color: var(--secondary-color);
+}
+
+/* Button Styles */
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(106, 17, 203, 0.7);
+}
+
+/* Link Styles */
+a {
+    color: var(--secondary-color) !important;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #fff !important;
+    text-shadow: 0 0 10px rgba(246, 211, 101, 0.5);
+}
+
+/* Loading Screen */
+.loading-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loading-title {
+    color: var(--secondary-color);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(246, 211, 101, 0.5);
+    letter-spacing: 2px;
+}
+
+.loading-bar-container {
+    width: 60%;
+    max-width: 500px;
+    height: 35px;
+    background: var(--dark-bg);
+    border: 3px solid var(--border-color);
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 0 15px var(--shadow-color);
+    padding: 3px;
+    overflow: visible;
+}
+
+.loading-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: 15px;
+    transition: width 2s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.7);
+    position: relative;
+}
+
+.loading-character {
+    position: absolute;
+    top: -80px;
+    left: calc(100% - 25px);
+    width: 80px;
+    height: 80px;
+    background-image: url('../images/changli.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform-origin: bottom;
+    z-index: 2;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+    animation: float 1s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+@keyframes stretchLine {
+    0% {
+        height: 30px;
+        opacity: 0.8;
+    }
+    100% {
+        height: 40px;
+        opacity: 0.4;
+    }
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Navbar Styles */
+.navbar {
+    background: var(--dark-bg) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 30px var(--shadow-color);
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+    text-shadow: 0 0 10px rgba(246, 211, 101, 0.5);
+}
+
+/* Footer Styles */
+footer {
+    background: var(--dark-bg);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-bottom {
+    background: rgba(28, 0, 91, 0.8) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+body {
+    background-image: url('../images/background.jpg'); /* Sử dụng ảnh chất lượng cao */
+    background-size: 100% auto; /* Đảm bảo ảnh hiển thị đầy đủ mà không bị co dãn */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white; /* Giữ chữ trắng để dễ đọc */
+}
+
+/* Tăng độ sắc nét của hình nền */
+@media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
+    body {
+        background-image: url('../images/background@2x.jpg'); /* Phiên bản ảnh độ phân giải cao hơn */
+    }
+}
+
+/* Thêm lớp phủ mờ giúp ảnh nhìn đẹp hơn và chữ dễ đọc hơn */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Điều chỉnh độ tối để cân bằng hiển thị */
+    z-index: -1;
+}
+
+
+/* Container chính có độ mờ nhẹ */
+.container {
+    background: rgba(0, 0, 0, 0.85); /* Nền tối trong suốt */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Tạo viền sáng nhẹ */
+}
+
+/* Thiết kế Navbar */
+.navbar {
+    background: linear-gradient(90deg, #8B0000, #FF4500); /* Hiệu ứng màu đỏ */
+    border-bottom: 3px solid gold;
+    box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.5); /* Tạo hiệu ứng nổi */
+}
+
+/* Tùy chỉnh menu */
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: yellow;
+    text-shadow: 0px 0px 5px yellow;
+}
+
+/* Nút bấm phong cách game */
+.btn-primary {
+    background: gold;
+    color: black;
+    font-weight: bold;
+    border: 2px solid red;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: red;
+    color: white;
+    border: 2px solid gold;
+    box-shadow: 0px 0px 10px gold;
+}
+
+/* Bảng danh sách game */
+.table-dark {
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Thiết kế phần TOP NẠP TIỀN */
+.top-recharge {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Tùy chỉnh thứ hạng */
+.top-recharge .ranking {
+    color: gold;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px gold;
+}
+
+/* Số tiền nạp */
+.top-recharge .amount {
+    background: gold;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px gold;
+}
+
+/* Hiệu ứng mượt cho toàn bộ trang */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+footer h5 {
+    color: #00d9ff; /* Màu xanh neon */
+    text-shadow: 2px 2px 8px rgba(0, 217, 255, 0.8);
+}
+
+footer p, footer a {
+    color: #ffffff;
+    font-size: 16px;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3);
+}
+
+footer a:hover {
+    color: #00d9ff;
+    text-decoration: underline;
+}
+
+footer .social-icons img {
+    width: 40px;
+    margin: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+footer .social-icons img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+}
+
+.language-buttons button {
+    background-color: #007bff;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    margin: 5px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.language-buttons button:hover {
+    background-color: #0056b3;
+}
+
